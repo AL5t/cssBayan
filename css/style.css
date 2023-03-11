@@ -1,0 +1,65 @@
+body {
+   margin: 0;
+}
+
+.container {
+   margin: 0 auto;
+   padding: 30px;
+   max-width: 1920px;
+   box-sizing: border-box;
+   background-color: yellowgreen;
+}
+
+.accordion {
+   background-color: orange;
+}
+
+.accordion__title {
+
+}
+
+.accordion__items {
+   background-color: blueviolet;
+}
+
+.accordion__item {
+   background-color: rosybrown;
+}
+
+.accordion__input {
+   /* display: none; */
+}
+
+.accordion__input:checked ~ .accordion__toolbar {
+   height: 20px;
+}
+
+.accordion__input:checked ~ .accordion__toolbar > .accordion__content-img {
+   display: none;
+}
+
+.accordion__toolbar {
+   /* display: flex;
+   justify-content: space-between; */
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: 20px 180px;
+   /* overflow: hidden; */
+   background-color: red;
+}
+
+.accordion__toolbar-title {
+   place-self: center start;
+}
+
+.accordion__toolbar-img {
+   place-self: center end;
+   width: 15px;
+   height: 15px;
+}
+
+.accordion__content-img {
+   grid-column-start: span 2;
+   place-self: center;
+   width: 100px;
+}

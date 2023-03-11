@@ -19,33 +19,82 @@ body {
 }
 
 .accordion__items {
+   color: #0000ff;
    background-color: blueviolet;
 }
 
-.accordion__item {
-   background-color: rosybrown;
+.accordion__items:hover {
+   color: #000;
+   cursor: pointer;
+
 }
 
+.accordion__items:hover .accordion__toolbar-img {
+   opacity: 1;
+}
+
+.accordion__item {
+   /* height: 50px;
+   overflow: hidden;
+   transition: all 1s; */
+   background-color: green;
+}
+
+/* .accordion__item:hover {
+   height: 220px;
+} */
+
 .accordion__input {
+   cursor: inherit;
    /* display: none; */
 }
 
 .accordion__input:checked ~ .accordion__toolbar {
-   height: 20px;
+   grid-template-rows: 20px 180px;
+   color: #000;
+   translate: all 0.5s;
+   /* height: 20px; */
 }
 
 .accordion__input:checked ~ .accordion__toolbar > .accordion__content-img {
-   display: none;
+   /* display: inline; */
+   visibility: visible;
+   width: 100px;
+}
+
+.accordion__input:checked ~ .accordion__toolbar > .accordion__toolbar-img,
+.accordion__toolbar:hover > .accordion__toolbar-img {
+   transform: rotate(45deg);
 }
 
 .accordion__toolbar {
-   /* display: flex;
-   justify-content: space-between; */
    display: grid;
    grid-template-columns: 1fr 1fr;
-   grid-template-rows: 20px 180px;
-   /* overflow: hidden; */
+   grid-template-rows: 15% 0%;
+   /* height: 200px; */
+   overflow: hidden;
+   cursor: inherit;
    background-color: red;
+}
+
+.accordion__toolbar:hover {
+   grid-template-rows: 15% 85%;
+   transition: all 1s;
+}
+
+.accordion__toolbar:hover > .accordion__content-img {
+   visibility: visible;
+   width: 100px;
+   transition: all 1s;
+}
+
+.accordion__toolbar:active,
+.accordion__input:checked ~ .accordion__toolbar:active {
+   color: #0000ff;
+}
+
+.accordion__toolbar:active .accordion__content-img {
+   filter: contrast(50%);
 }
 
 .accordion__toolbar-title {
@@ -56,10 +105,15 @@ body {
    place-self: center end;
    width: 15px;
    height: 15px;
+   opacity: 0;
+   transition: all 1s;
 }
 
 .accordion__content-img {
+   /* display: none; */
    grid-column-start: span 2;
    place-self: center;
-   width: 100px;
+   width: 30px;
+   visibility: hidden;
+   /* transition: all 0.5s; */
 }

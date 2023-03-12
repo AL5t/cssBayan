@@ -22,7 +22,7 @@ body {
 
 .accordion__title {
    margin: 0 0 0.5em 0;
-   font-size: calc(2vw + 1.5rem);
+   font-size: calc(2vw + 1rem);
 }
 
 .accordion__items {

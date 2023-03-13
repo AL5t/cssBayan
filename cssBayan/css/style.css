@@ -25,6 +25,12 @@ body {
    font-size: calc(2vw + 1rem);
 }
 
+@media(min-width: 1400px) {
+   .accordion__title {
+      font-size: 2.8rem;
+   }
+}
+
 .accordion__items {
    color: #0000ff;
 }
@@ -71,6 +77,12 @@ body {
       visibility: visible;
       width: 100px;
       transition: all 0.5s;
+   }
+}
+
+@media(min-width: 1400px) {
+   .accordion__toolbar {
+      font-size: 1.8rem;
    }
 }
 

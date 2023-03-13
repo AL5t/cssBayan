@@ -1,0 +1,124 @@
+body {
+   margin: 0;
+}
+
+.container {
+   margin: 0 auto;
+   padding: calc(1vw + 0.6rem);
+   min-height: 100vh;
+   box-sizing: border-box;
+   background-color: #f3ecc7;
+   font-weight: 700;
+}
+
+.accordion {
+   margin: 0 auto;
+   max-width: 70rem;
+}
+
+.accordion__title {
+   margin: 0 0 0.5em 0;
+   font-size: calc(2vw + 1.5rem);
+}
+
+.accordion__items {
+   color: #0000ff;
+}
+
+@media(min-width: 1181px) {
+   .accordion__items:hover {
+      color: #000;
+      cursor: pointer;
+   }
+
+   .accordion__items:hover .accordion__toolbar-img {
+      opacity: 1;
+   }
+}
+
+.accordion__input {
+   cursor: inherit;
+   display: none;
+}
+
+.accordion__toolbar {
+   display: grid;
+   grid-template-columns: 7fr 1fr;
+   grid-template-rows: 2.4em 0;
+   overflow: hidden;
+   cursor: inherit;
+   border-top: 0.1rem solid #8c8c8c;
+   font-size: calc(1vw + 0.9rem);
+}
+
+.accordion__input:checked ~ .accordion__toolbar {
+   grid-template-rows: 2.4em 10em;
+   color: #000;
+   transition: all 0.5s;
+}
+
+@media(min-width: 1181px) {
+   .accordion__toolbar:hover {
+      grid-template-rows: 2.4em 9em;
+      transition: all 0.5s;
+   }
+
+   .accordion__toolbar:hover > .accordion__content-img {
+      visibility: visible;
+      width: 100px;
+      transition: all 0.5s;
+   }
+}
+
+.accordion__toolbar:active,
+.accordion__input:checked ~ .accordion__toolbar:active {
+   color: #0000ff;
+}
+
+.accordion__toolbar:active .accordion__content-img {
+   filter: contrast(50%);
+}
+
+.accordion__toolbar-title {
+   place-self: center start;
+   
+}
+
+.accordion__toolbar-img {
+   place-self: center end;
+   width: 1em;
+   height: 1em;
+   transition: all 0.5s;
+}
+
+.accordion__input:checked ~ .accordion__toolbar > .accordion__toolbar-img,
+.accordion__toolbar:hover > .accordion__toolbar-img {
+   transform: rotate(45deg);
+}
+
+@media(min-width: 1181px) {
+   .accordion__toolbar-img {
+      opacity: 0;
+   }
+}
+
+.accordion__content-img {
+   grid-column-start: span 2;
+   place-self: center;
+   width: 3em;
+   visibility: hidden;
+}
+
+.accordion__input:checked ~ .accordion__toolbar > .accordion__content-img {
+   visibility: visible;
+   width: 15em;
+   transition: all 0.5s;
+}
+
+@media(min-width: 1181px) {
+   .accordion__toolbar:hover > .accordion__content-img {
+      visibility: visible;
+      width: 15em;
+      transition: all 0.5s;
+   }
+}
